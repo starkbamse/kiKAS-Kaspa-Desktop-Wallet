@@ -1,0 +1,19 @@
+{
+  "name": "kaspa-wasm",
+  "collaborators": [
+    "Kaspa developers"
+  ],
+  "description": "KASPA WASM bindings",
+  "version": "0.1.7",
+  "license": "MIT/Apache-2.0",
+  "files": [
+    "kaspa_wasm_bg.wasm",
+    "kaspa_wasm.js",
+    "kaspa_wasm.d.ts"
+  ],
+  "module": "kaspa_wasm.js",
+  "types": "kaspa_wasm.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}

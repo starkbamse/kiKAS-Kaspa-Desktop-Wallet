@@ -1,0 +1,15 @@
+.walletList-wallet{
+transition: 0.3s;
+}
+
+.walletList-wallet:hover{
+    background-color: #6fc7ba;
+    color:#1e2c2a;
+    cursor: pointer;
+}
+
+.selectedWallet {
+    background-color: #6fc7ba;
+    color:#1e2c2a;
+    cursor: pointer;
+}

@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,body {
+  font-family: "Inter";
+
+}
+main{
+  height: 100vh;
+}
+
+main>div{
+  overflow-y: scroll;
+}
+
+.color-primary {
+  color:#49EACB
+}
+
+.bg-primary {
+  background-color:#49EACB;
+}
+
+.bg-secondary {
+  background-color: #231F20;
+}
+
+.color-secondary {
+  color: #273937;
+}
+
+.btn-primary {
+  color: #231F20;
+  background-color:#49EACB;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background-color:#3bc2a7;
+}
+
+.color-tertiary {
+  color: #7ee0d2;
+
+}
+
+.btn-secondary {
+  color: #B6B6B6;
+  background-color:#231F20;
+  transition: 0.3s;
+
+}
+.btn-secondary:hover {
+  color: #B6B6B6;
+  background-color:#110f10;
+}
+
+a:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,14 @@
+.address {
+    max-width: 50px;
+    overflow-x:scroll;
+}
+
+.wallet-list,.tx-list {
+    max-height: 130px;
+    overflow-y: scroll;
+}
+
+.settings{
+    width:20px;
+    height:auto;
+}
