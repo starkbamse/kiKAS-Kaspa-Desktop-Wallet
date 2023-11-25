@@ -30,11 +30,11 @@ export default function Start (): JSX.Element {
   }
 
   return <>
-      <main class="w-full max-w-md mx-auto p-6">
-      <div class="h-full bg-white border border-gray-200 rounded-xl shadow-sm">
+      <main class="w-full max-w-md mx-auto">
+      <div class="h-full bg-white border border-gray-200 shadow-sm">
       <div>
         <Show when={!componentState.start}>
-          <button onClick={[renderComponent, 'start']} class="bg-white ml-2 float-left absolute mb-5 py-1 px-1 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent">Back</button>
+          <button onClick={[renderComponent, 'start']} class="bg-white ml-2 float-left absolute mb-5 py-1 px-1 inline-flex justify-center items-center gap-x-2 text-sm font-semibold border border-transparent">Back</button>
         </Show>
 
             <img class="logo mt-4" src={logo}></img>
@@ -48,8 +48,8 @@ export default function Start (): JSX.Element {
 
           <div>
 
-          <button onClick={[renderComponent, 'open']} class="w-full bg-primary btn-primary mb-2 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600">Open existing wallet</button>
-          <button onClick={[renderComponent, 'create']} class="w-full bg-primary btn-secondary py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600">Add new wallet</button>
+          <button onClick={[renderComponent, 'open']} class="w-full bg-primary btn-primary mb-2 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold border border-transparent bg-blue-600">Open existing wallet</button>
+          <button onClick={[renderComponent, 'create']} class="w-full bg-primary btn-secondary py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold border border-transparent bg-blue-600">Add new wallet</button>
           </div>
         </div>
 

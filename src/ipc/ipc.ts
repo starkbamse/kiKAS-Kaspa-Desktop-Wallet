@@ -1,7 +1,7 @@
 import { storeNewWallet, getDirectories, getDirectoriesSync, getChunks } from "../wallet/wallet"
 import { ipcMain } from "electron"
 import * as path from "path"
-import { setClient } from "../rpc/rpc"
+import { getUtxosByAddresses, setClient } from "../rpc/rpc"
 
 export async function startIPCListener() {
     ipcMain.on('newWallet', (/** @type {Electron.IpcMainEvent} */ event,
@@ -23,10 +23,9 @@ export async function startIPCListener() {
     });
 
     //Rpc methods
-    ipcMain.handle('requestUTXO', (event, arg:string) => {
-        const wallet=arg;
-        //const encryptedData = getChunks(walletDir);
-        return "encryptedData";
+    ipcMain.handle('requestUTXO', async (event, arg:string) => {
+        const accountDetail=await getUtxosByAddresses(arg)
+        return accountDetail;
     });    
     ipcMain.handle('requestRPCConnect',async (event, arg:string) => {
         const serverStatus = await setClient(arg);

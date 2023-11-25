@@ -100,14 +100,14 @@ export function Open (props: OpenProps): JSX.Element {
 
                 <div>
                 <label for="password-input" class="block text-sm font-medium mb-2">Enter password</label>
-                <input use:model={[aesPassword, setAesPassword]} type="text" name="password-input" class="mb-2 rounded-md w-full py-2 px-2 text-sm"></input>
+                <input use:model={[aesPassword, setAesPassword]} type="text" name="password-input" class="mb-2 w-full py-2 px-2 text-sm"></input>
                 <Show when={decryptKyber()}>
                   <label for="password-input" class="block text-sm font-medium mb-2">Enter password used for PQE</label>
-                  <input use:model={[kyberPassword, setKyberPassword]} type="text" name="password-input" class="mb-2 rounded-md w-full py-2 px-2 text-sm"></input>
+                  <input use:model={[kyberPassword, setKyberPassword]} type="text" name="password-input" class="mb-2 w-full py-2 px-2 text-sm"></input>
                 </Show>
                 </div>
 
-            <button onClick={openWallet} class="w-full bg-primary btn-primary mb-2 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600">Open</button>
+            <button onClick={openWallet} class="w-full bg-primary btn-primary mb-2 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold border border-transparent bg-blue-600">Open</button>
 
             <p class="text-center text-sm mt-2 text-gray-600">Ensure other people cannot peek at your screen. If your recovery phrase is compromised, your assets may be lost forever.</p>
 

@@ -39,9 +39,9 @@ export default function Create (props: CreateProps): JSX.Element {
               <p class="text-center">{mnemonic()}</p>
             </div>
 
-            <button onClick={generateMnemonic} class="w-full bg-primary btn-primary mb-2 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600">Generate recovery phrase</button>
+            <button onClick={generateMnemonic} class="w-full bg-primary btn-primary mb-2 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold border border-transparent bg-blue-600">Generate recovery phrase</button>
             <Show when={proceed()}>
-            <button onClick={[renderComponent, 'confirm']} class="w-full btn-secondary mb-2 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600">Continue</button>
+            <button onClick={[renderComponent, 'confirm']} class="w-full btn-secondary mb-2 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold border border-transparent bg-blue-600">Continue</button>
 
             </Show>
 

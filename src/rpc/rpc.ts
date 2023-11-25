@@ -13,6 +13,11 @@ type ServerStatus = {
   virtualDaaScore: bigint  
 }
 
+export interface AccountDetail {
+    utxos:any[]
+    balance:{balance:bigint}
+}
+
 export async function setClient(url:string):Promise<ServerStatus> {
     return new Promise((resolve,reject)=>{
         client=new RpcClient(url,
@@ -28,4 +33,15 @@ export async function setClient(url:string):Promise<ServerStatus> {
         })
 
     })
+}
+
+export async function getUtxosByAddresses(address:string):Promise<AccountDetail>{
+    let entries=await client.getUtxosByAddresses([address])
+    let balance=await client.getBalanceByAddress({address:address})
+    entries.sort((a:any, b:any) => a.utxoEntry.amount > b.utxoEntry.amount || -(a.utxoEntry.amount < b.utxoEntry.amount));
+    let accountDetail:AccountDetail={
+        utxos:entries,
+        balance:balance
+    }
+    return accountDetail
 }

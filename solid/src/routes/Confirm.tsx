@@ -101,7 +101,7 @@ export default function Confirm (props: ConfirmProps): JSX.Element {
                   </div>
                 }</For>
               </div>
-              <button onClick={confirmVerification} class="w-full bg-primary btn-primary mb-2 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600">Confirm recovery phrase</button>
+              <button onClick={confirmVerification} class="w-full bg-primary btn-primary mb-2 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold border border-transparent bg-blue-600">Confirm recovery phrase</button>
               <p class="text-center text-sm mt-2 text-gray-600">If your recovery phrase is lost or compromised, your assets will be lost forever. Store it in a secret place, in a non-flammable location.</p>
 
             </Show>
@@ -109,11 +109,11 @@ export default function Confirm (props: ConfirmProps): JSX.Element {
             <Show when={doEnterPassword()}>
               <div>
               <label for="password-input" class="block text-sm font-medium mb-2">Wallet name</label>
-                <input use:model={[name, setName]} type="text" name="password-input" class="mb-2 rounded-md w-full py-2 px-2 text-sm"></input>
+                <input use:model={[name, setName]} type="text" name="password-input" class="mb-2 w-full py-2 px-2 text-sm"></input>
                 <label for="password-input" class="block text-sm font-medium mb-2">Enter password</label>
-                <input use:model={[password, setPassword]} type="password" name="password-input" class="mb-2 rounded-md w-full py-2 px-2 text-sm"></input>
+                <input use:model={[password, setPassword]} type="password" name="password-input" class="mb-2 w-full py-2 px-2 text-sm"></input>
                 <label for="password-input" class="block text-sm font-medium mb-2">Confirm password</label>
-                <input use:model={[passwordConfirmation, setPasswordConfirmation]} name="password-input" type="password" class="rounded-md w-full py-2 px-2 text-sm"></input>
+                <input use:model={[passwordConfirmation, setPasswordConfirmation]} name="password-input" type="password" class="w-full py-2 px-2 text-sm"></input>
                 <Show when={passwordConfirmation() !== password() && (password().length > 0 && passwordConfirmation().length > 0)}>
                   <p class="text-sm text-red-600">Passwords are not matching!</p>
                 </Show>
@@ -131,9 +131,9 @@ export default function Confirm (props: ConfirmProps): JSX.Element {
               <Show when={useKyber()}>
                 <div class="mb-2">
                   <label for="password-input" class="block text-sm font-medium mb-2">Enter a second password</label>
-                  <input use:model={[kyberPassword, setKyberPassword]} type="password" class="mb-2 rounded-md w-full py-2 px-2 text-sm"></input>
+                  <input use:model={[kyberPassword, setKyberPassword]} type="password" class="mb-2 w-full py-2 px-2 text-sm"></input>
                   <label for="password-input" class="block text-sm font-medium mb-2">Confirm second password</label>
-                  <input use:model={[kyberPasswordConfirmation, setKyberPasswordConfirmation]} type="password" class="rounded-md w-full py-2 px-2 text-sm"></input>
+                  <input use:model={[kyberPasswordConfirmation, setKyberPasswordConfirmation]} type="password" class="w-full py-2 px-2 text-sm"></input>
                   <Show when={((kyberPasswordConfirmation() !== kyberPassword()) || (password() === kyberPassword() && kyberPassword() === kyberPasswordConfirmation() && kyberPassword().length > 0 && kyberPasswordConfirmation().length > 0))}>
                     <Show when={kyberPasswordConfirmation() !== kyberPassword()} fallback={<p class="text-sm text-red-600 p-2">Password one cannot equal password two!</p>}>
                       <p class="text-sm text-red-600 p-2">Passwords are not matching!</p>
@@ -146,7 +146,7 @@ export default function Confirm (props: ConfirmProps): JSX.Element {
                 </div>
               </Show>
 
-              <button onClick={confirmPassword} class="w-full bg-primary btn-primary mb-2 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600">Confirm and encrypt wallet</button>
+              <button onClick={confirmPassword} class="w-full bg-primary btn-primary mb-2 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold border border-transparent bg-blue-600">Confirm and encrypt wallet</button>
               <p class="text-center text-sm mt-2 text-gray-600">You have the option of securing your wallet with a quantum-secure algorithm. This requires the use of a second password. Visit <a class="underline" target="_blank" href="https://kaspx.io/">KaspX</a> for more security details.</p>
 
             </Show>
